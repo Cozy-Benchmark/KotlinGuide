@@ -2,6 +2,7 @@ fun main() {
 //  Printing
     println("Hello World")
     val line: String = "--------------------------------------------------------------------------"
+    val variable: String = "Variable"
 
 //  Variables
     val characterValue: Char = 'A'       // Character
@@ -12,7 +13,7 @@ fun main() {
     val byteValue: Byte = 0              // Byte
     val shortValue: Short = 0            // Short
     val longValue: Long = 0              // Long
-    val floatValue: Float = 0.0F         // Float
+    val floatValue: Float = 0F           // Float
 
 //  Max Values for Integer Data Types
     val maxIntegerValue: Int = Int.MAX_VALUE
@@ -53,5 +54,7 @@ fun main() {
     println(String.format("%-25s %-25d %d","Short", minShortValue, maxShortValue))
     println(String.format("%-25s %-25d %d","Long", minLongValue, maxLongValue))
     println(String.format("%-25s %-25.2f %.2f","Float", minFloatValue, maxFloatValue))
+    println(line)
+    println("In Line Calling of Variable: $variable")
     println(line)
 }
