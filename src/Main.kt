@@ -75,11 +75,17 @@ fun main() {
     if (x == null || y == null || z == null || string == null){
         exitProcess(1)
     }
+
 //  Array
     val array = arrayOf(x, y, z)
-    println(array[0])
-    println(array[1])
-    println(array[2])
+    val arraySize = array.size
+    var i: Int = 0
+
+//  While Loop
+    while (i < arraySize) {
+        println(array[i])
+        i++
+    }
     //  val z: Int = if ((x + y) > 10) 3 else 4
     val wordToCheckForPalindrome: String = string.replace("\\s".toRegex(), "").lowercase()
 
