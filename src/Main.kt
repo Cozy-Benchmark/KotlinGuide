@@ -1,8 +1,11 @@
 fun main() {
-//  Printing
-    println("Hello World")
     val line: String = "--------------------------------------------------------------------------"
     val variable: String = "Variable"
+
+//  Printing
+    println(line)
+    println("Hello World")
+    println(line)
 
 //  Variables
     val characterValue: Char = 'A'       // Character
@@ -31,10 +34,36 @@ fun main() {
     val minLongValue: Long = Long.MIN_VALUE
     val minFloatValue: Float = Float.MIN_VALUE
 
+//  ARITHMETIC OPERATIONS
+    val x = 3
+    val y = 4
+    val z = 5
+
+//    Operate to themselves
+//       x += x
+//       x -= x
+//       x *= x
+//       x /= 1
+
+    val sumResultOf2 = x + y
+    val differenceResultOf2 = x - y
+    val productResultOf2 = x * y
+    val quotientResultOf2 = x / y
+    val sumResultOf3 = sumResultOf2 + z
+    val differenceResultOf3 = differenceResultOf2 - z
+    val productResultOf3 = productResultOf2 * z
+    val quotientResultOf3 = quotientResultOf2 / z
+
+
     println(line)
-    println("Notes:")
+    println("NOTES:")
     println(line)
-    println("Variables:")
+    println("Val is constant.")
+    println("Var is modifiable.")
+    println(line)
+    println(line)
+    println("VARIABLES:")
+    println(line)
     println(String.format("%-25s %s","Char", characterValue))
     println(String.format("%-25s %s","String", stringValue))
     println(String.format("%-25s %s","Boolean", booleanVale))
@@ -55,6 +84,21 @@ fun main() {
     println(String.format("%-25s %-25d %d","Long", minLongValue, maxLongValue))
     println(String.format("%-25s %-25.2f %.2f","Float", minFloatValue, maxFloatValue))
     println(line)
-    println("In Line Calling of Variable: $variable")
+    println(line)
+    println("IN LINE CALLING OF VARIABLE: $variable")
+    println(line)
+    println(line)
+    println("ARITHMETIC OPERATIONS:")
+    println(line)
+    println("Values: \n x = $x \n y = $y")
+    println(String.format("%-35s %s","The sum of x and y is: ", sumResultOf2))
+    println(String.format("%-35s %s","The difference of x and y is: ", differenceResultOf2))
+    println(String.format("%-35s %s","The product of x and y is: ", productResultOf2))
+    println(String.format("%-35s %s","The quotient of x and y is: ", quotientResultOf2))
+    println(line)
+    println(String.format("%-35s %s","The sum of x, y, and z is: ", sumResultOf3))
+    println(String.format("%-35s %s","The difference of x, y, and z is: ", differenceResultOf3))
+    println(String.format("%-35s %s","The product of x, y, and z is: ", productResultOf3))
+    println(String.format("%-35s %s","The quotient of x, y, and z is: ", quotientResultOf3))
     println(line)
 }
