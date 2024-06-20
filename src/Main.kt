@@ -1,16 +1,14 @@
 import kotlin.math.pow
 import kotlin.random.Random
+import kotlin.system.exitProcess
 
 fun main() {
     val line: String = "--------------------------------------------------------------------------"
 //  Printing
     println(line)
-    println("Hello World")
+    println("Hello User!")
     println(line)
 
-//  String
-    val variable: String = "Variable"
-    val string = "This is an example String."
 
 //  Variables
     val characterValue: Char = 'A'       // Character
@@ -50,15 +48,37 @@ fun main() {
 //    val y: Float = 4F
 //    val z: Float = 5F
 //    Decimal (Computation with Double Numbers)
-    val x: Double = 3.0
-    val y: Double = 4.0
-    val z: Double = 5.0
+//    val x: Double = 3.0
+//    val y: Double = 4.0
+//    val z: Double = 5.0
 
 //    Operate to themselves
 //       x += x
 //       x -= x
 //       x *= x
 //       x /= 1
+
+    //  User Input
+    println("Please input the necessary values:")
+    print("x: ")
+    val x: Double? = readlnOrNull()?.toDoubleOrNull()
+
+    print("y: ")
+    val y: Double? = readlnOrNull()?.toDoubleOrNull()
+
+    print("z: ")
+    val z: Double? = readlnOrNull()?.toDoubleOrNull()
+
+    print("Any word or phrase: ")
+    val string: String? = readlnOrNull()
+
+
+    if (x == null || y == null || z == null || string == null){
+        exitProcess(1)
+    }
+
+    //  val z: Int = if ((x + y) > 10) 3 else 4
+    val wordToCheckForPalindrome: String = string.replace("\\s".toRegex(), "").lowercase()
 
     val sumResultOf2 = x + y
     val differenceResultOf2 = x - y
@@ -71,26 +91,21 @@ fun main() {
     val areaResult = Math.PI * 0.75 * x.pow(3.0)
 
 //  Comparison Operators
-    val comparatorOne = Random.nextInt(0, 100)
-    val comparatorTwo = Random.nextInt(0, 100)
-    val comparatorThree = Random.nextInt(0, 100)
-    val comparatorFour = Random.nextInt(0, 100)
-
-    val comparingByLessThanResult = comparatorOne < comparatorTwo
-    val comparingByLessThanOrEqualResult = comparatorOne <= comparatorTwo
-    val comparingByEqualResult = comparatorOne == comparatorTwo
-    val comparingByNotEqualResult = comparatorOne != comparatorTwo
-    val comparisonByGreaterThanResult = comparatorOne > comparatorTwo
-    val comparisonByGreaterThanOrEqualResult = comparatorOne >= comparatorTwo
+    val comparingByLessThanResult = x < y
+    val comparingByLessThanOrEqualResult = x <= y
+    val comparingByEqualResult = x == y
+    val comparingByNotEqualResult = x != y
+    val comparisonByGreaterThanResult = x > y
+    val comparisonByGreaterThanOrEqualResult = x >= y
 
 //  Logical Operators
 //  && Both conditions are true
 //  || Either one or two are true
 //  ! Reverses\Negates the Boolean Value
-    val comparisonWithAndResult= (comparatorOne >= comparatorTwo) && (comparatorThree <= comparatorFour)
-    val comparisonWithORResult= (comparatorOne >= comparatorTwo) || (comparatorThree <= comparatorFour)
-    val comparisonWithNotAndAndResult= !(comparatorOne >= comparatorTwo) && (comparatorThree <= comparatorFour)
-    val comparisonWithNotAndOrResult= !(comparatorOne >= comparatorTwo) || (comparatorThree <= comparatorFour)
+    val comparisonWithAndResult= (x >= y) && (y <= z)
+    val comparisonWithORResult= (x >= y) || (y <= z)
+    val comparisonWithNotAndAndResult= !(x >= y) && (y <= z)
+    val comparisonWithNotAndOrResult= !(x >= y) || (y <= z)
 
     println("\nNOTES:")
     println("\nVal is constant.")
@@ -118,11 +133,11 @@ fun main() {
     println(String.format("%-25s %-25.2f %.2f","Float", minFloatValue, maxFloatValue))
     println(line)
     println(line)
-    println("IN LINE CALLING OF VARIABLE: $variable")
+    println("IN LINE CALLING OF VARIABLE: $string")
     println(line)
     println(line)
     println("ARITHMETIC OPERATIONS:")
-    println("\nValues: \n x = $x \n y = $y\n")
+    println("\nValues: \n x = $x \n y = $y\n z = $z\n")
     println(String.format("%-35s %s","The sum of x and y is: ", sumResultOf2))
     println(String.format("%-35s %s","The difference of x and y is: ", differenceResultOf2))
     println(String.format("%-35s %s","The product of x and y is: ", productResultOf2))
@@ -145,43 +160,36 @@ fun main() {
     println(line)
     println(line)
     println("LOGICAL AND COMPARISON OPERATORS")
-    println("\nValues to be compared: \n a = $comparatorOne \n b = $comparatorTwo \n c = $comparatorThree \n d = $comparatorFour")
     println("\nComparison Operators:")
-    println(String.format("%-15s %-45s %s", "(>)", "Is A Greater Than B:", comparisonByGreaterThanResult))
-    println(String.format("%-15s %-45s %s", "(>=)", "Is A Greater Than or Equal to B:", comparisonByGreaterThanOrEqualResult))
-    println(String.format("%-15s %-45s %s", "(==)", "Is A Equal to B:", comparingByEqualResult))
-    println(String.format("%-15s %-45s %s", "(!=)", "A Not Equal to B:", comparingByNotEqualResult))
-    println(String.format("%-15s %-45s %s", "(<)", "Is A Less Than B:", comparingByLessThanResult))
-    println(String.format("%-15s %-45s %s", "(<=)", "Is A Less Than or Equal to B:", comparingByLessThanOrEqualResult))
+    println(String.format("%-15s %-45s %s", "(>)", "Is $x Greater Than $y:", comparisonByGreaterThanResult))
+    println(String.format("%-15s %-45s %s", "(>=)", "Is $x Greater Than or Equal to $y:", comparisonByGreaterThanOrEqualResult))
+    println(String.format("%-15s %-45s %s", "(==)", "Is $x Equal to $y:", comparingByEqualResult))
+    println(String.format("%-15s %-45s %s", "(!=)", "Is $x Not Equal to $y:", comparingByNotEqualResult))
+    println(String.format("%-15s %-45s %s", "(<)", "Is $x Less Than $y:", comparingByLessThanResult))
+    println(String.format("%-15s %-45s %s", "(<=)", "Is $x Less Than or Equal to $y:", comparingByLessThanOrEqualResult))
     println("\nLogical Operators:")
-    println(String.format("%-15s %-45s %s", "(&&)", "Is a >= b && c <= d?", comparisonWithAndResult))
-    println(String.format("%-15s %-45s %s", "(||)", "Is a >= b || c <= d?", comparisonWithORResult))
-    println(String.format("%-15s %-45s %s", "(! and &&)", "Is !(a >= b) && c <= d?", comparisonWithNotAndAndResult))
-    println(String.format("%-15s %-45s %s", "(! and ||)", "Is !(a >= b) || c <= d?", comparisonWithNotAndOrResult))
+    println(String.format("%-15s %-45s %s", "(&&)", "Is $x >= $y && $y <= $z?", comparisonWithAndResult))
+    println(String.format("%-15s %-45s %s", "(||)", "Is $x >= $y || $y <= $z?", comparisonWithORResult))
+    println(String.format("%-15s %-45s %s", "(! and &&)", "Is !($x >= $y) && $y <= $z?", comparisonWithNotAndAndResult))
+    println(String.format("%-15s %-45s %s", "(! and ||)", "Is !($x >= $y) || $y <= $z?", comparisonWithNotAndOrResult))
     println(line)
 
-    //  IF Conditions
-    val xx: Int = 5
-    val yy: Int = 7
-    val zz: Int = if ((x + y) > 10) 3 else 4
-    val wordToCheckForPalindrome: String = "Race car".replace("\\s".toRegex(), "").lowercase()
+//  IF Conditions
     println("\nConditional Statements")
     println("\nIf Else Conditions - if condition is true, the appropriate lines will work. Else skipped.")
     println("\nExample:")
-    println("\n1. Result will state if XX is less, equal, or greater than yy")
-    println("Values \n xx = $xx \n yy = $yy")
-    if (xx < yy)
-        println("Result: XX is less than YY")
-    else if(xx > yy)
-        println("Result: XX is greater than YY")
+    println("\n1. Result will state if $x is less, equal, or greater than $y")
+    if (x < y)
+        println("Result: $x is less than $y")
+    else if(x > y)
+        println("Result: $x is greater than $y")
      else
-        println("Result: XX is equal to YY")
+        println("Result: $x is equal to $y")
 
     println("\n2. Check if word is a palindrome.")
     println("Values: \n word = $wordToCheckForPalindrome \n reversed = ${wordToCheckForPalindrome.reversed()}")
     if (wordToCheckForPalindrome == wordToCheckForPalindrome.reversed())
-        println("The word $wordToCheckForPalindrome is a palindrome")
+        println("The word $string is a palindrome")
     else
-        println("The word $wordToCheckForPalindrome is not a palindrome")
-
+        println("The word $string is not a palindrome")
 }
