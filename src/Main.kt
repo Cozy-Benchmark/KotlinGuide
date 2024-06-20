@@ -1,3 +1,5 @@
+import kotlin.math.pow
+
 fun main() {
     val line: String = "--------------------------------------------------------------------------"
     val variable: String = "Variable"
@@ -35,9 +37,19 @@ fun main() {
     val minFloatValue: Float = Float.MIN_VALUE
 
 //  ARITHMETIC OPERATIONS
-    val x = 3
-    val y = 4
-    val z = 5
+//    Values
+//    Integer (Computation with Integer Numbers)
+//    val x = 3 // val x: Int = 3
+//    val y = 4 // val y: Int = 4
+//    val z = 5 // val z: Int = 5
+//    Float (Computation with Float Numbers)
+//    val x: Float = 3F
+//    val y: Float = 4F
+//    val z: Float = 5F
+//    Decimal (Computation with Double Numbers)
+    val x: Double = 3.0
+    val y: Double = 4.0
+    val z: Double = 5.0
 
 //    Operate to themselves
 //       x += x
@@ -53,6 +65,7 @@ fun main() {
     val differenceResultOf3 = differenceResultOf2 - z
     val productResultOf3 = productResultOf2 * z
     val quotientResultOf3 = quotientResultOf2 / z
+    val areaResult = Math.PI * 0.75 * x.pow(3.0)
 
 
     println(line)
@@ -91,6 +104,7 @@ fun main() {
     println("ARITHMETIC OPERATIONS:")
     println(line)
     println("Values: \n x = $x \n y = $y")
+    println(line)
     println(String.format("%-35s %s","The sum of x and y is: ", sumResultOf2))
     println(String.format("%-35s %s","The difference of x and y is: ", differenceResultOf2))
     println(String.format("%-35s %s","The product of x and y is: ", productResultOf2))
@@ -101,4 +115,9 @@ fun main() {
     println(String.format("%-35s %s","The product of x, y, and z is: ", productResultOf3))
     println(String.format("%-35s %s","The quotient of x, y, and z is: ", quotientResultOf3))
     println(line)
+    println("Sample Computation of getting the area of a spherical object (x):")
+    println(line)
+    println("Formula: 0.75 * ${Math.PI} * radius (x) ^ 3")
+    println(line)
+    println(String.format("%-35s %s", "The area of $x is:", areaResult))
 }
