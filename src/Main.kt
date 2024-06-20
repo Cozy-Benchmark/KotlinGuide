@@ -12,6 +12,11 @@ fun main() {
     val variable: String = "Variable"
     val string = "This is an example String."
 
+//  Printing
+    println(line)
+    println("Hello World")
+    println(line)
+
 //  Variables
     val characterValue: Char = 'A'       // Character
     val stringValue: String = "String"   // String
@@ -159,4 +164,26 @@ fun main() {
     println(String.format("%-15s %-45s %s", "(! and &&)", "Is !(a >= b) && c <= d?", comparisonWithNotAndAndResult))
     println(String.format("%-15s %-45s %s", "(! and ||)", "Is !(a >= b) || c <= d?", comparisonWithNotAndOrResult))
     println(line)
+    println("IN LINE CALLING OF VARIABLE: $variable")
+    println(line)
+    println(line)
+    println("ARITHMETIC OPERATIONS:")
+    println(line)
+    println("Values: \n x = $x \n y = $y")
+    println(line)
+    println(String.format("%-35s %s","The sum of x and y is: ", sumResultOf2))
+    println(String.format("%-35s %s","The difference of x and y is: ", differenceResultOf2))
+    println(String.format("%-35s %s","The product of x and y is: ", productResultOf2))
+    println(String.format("%-35s %s","The quotient of x and y is: ", quotientResultOf2))
+    println(line)
+    println(String.format("%-35s %s","The sum of x, y, and z is: ", sumResultOf3))
+    println(String.format("%-35s %s","The difference of x, y, and z is: ", differenceResultOf3))
+    println(String.format("%-35s %s","The product of x, y, and z is: ", productResultOf3))
+    println(String.format("%-35s %s","The quotient of x, y, and z is: ", quotientResultOf3))
+    println(line)
+    println("Sample Computation of getting the area of a spherical object (x):")
+    println(line)
+    println("Formula: 0.75 * ${Math.PI} * radius (x) ^ 3")
+    println(line)
+    println(String.format("%-35s %s", "The area of $x is:", areaResult))
 }
