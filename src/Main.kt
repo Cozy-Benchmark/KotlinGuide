@@ -159,4 +159,29 @@ fun main() {
     println(String.format("%-15s %-45s %s", "(! and &&)", "Is !(a >= b) && c <= d?", comparisonWithNotAndAndResult))
     println(String.format("%-15s %-45s %s", "(! and ||)", "Is !(a >= b) || c <= d?", comparisonWithNotAndOrResult))
     println(line)
+
+    //  IF Conditions
+    val xx: Int = 5
+    val yy: Int = 7
+    val zz: Int = if ((x + y) > 10) 3 else 4
+    val wordToCheckForPalindrome: String = "Race car".replace("\\s".toRegex(), "").lowercase()
+    println("\nConditional Statements")
+    println("\nIf Else Conditions - if condition is true, the appropriate lines will work. Else skipped.")
+    println("\nExample:")
+    println("\n1. Result will state if XX is less, equal, or greater than yy")
+    println("Values \n xx = $xx \n yy = $yy")
+    if (xx < yy)
+        println("Result: XX is less than YY")
+    else if(xx > yy)
+        println("Result: XX is greater than YY")
+     else
+        println("Result: XX is equal to YY")
+
+    println("\n2. Check if word is a palindrome.")
+    println("Values: \n word = $wordToCheckForPalindrome \n reversed = ${wordToCheckForPalindrome.reversed()}")
+    if (wordToCheckForPalindrome == wordToCheckForPalindrome.reversed())
+        println("The word $wordToCheckForPalindrome is a palindrome")
+    else
+        println("The word $wordToCheckForPalindrome is not a palindrome")
+
 }
