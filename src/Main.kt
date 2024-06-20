@@ -78,26 +78,32 @@ fun main() {
 
 //  Array
     val array = arrayOf(x, y, z)
-    val arraySize = array.size
-    var i: Int = 0
+//    val arraySize = array.size
+//    var i: Int = 0
 
 //  While Loop
-    while (i < arraySize) {
-        println(array[i])
-        i++
+//    while (i < arraySize) {
+//        println(array[i])
+//        i++
+//    }
+
+//  For Loop
+    var sumResult: Double = 0.0
+    var differenceResult: Double = 0.0
+    var productResult: Double = 1.0
+    var quotientResult: Double = 1.0
+
+    for (i in array){
+        sumResult += i
+        differenceResult -= i
+        productResult *= i
+        quotientResult /= i
     }
+
     //  val z: Int = if ((x + y) > 10) 3 else 4
     val wordToCheckForPalindrome: String = string.replace("\\s".toRegex(), "").lowercase()
 
-    val sumResultOf2 = x + y
-    val differenceResultOf2 = x - y
-    val productResultOf2 = x * y
-    val quotientResultOf2 = x / y
-    val sumResultOf3 = sumResultOf2 + z
-    val differenceResultOf3 = differenceResultOf2 - z
-    val productResultOf3 = productResultOf2 * z
-    val quotientResultOf3 = quotientResultOf2 / z
-    val areaResult = Math.PI * 0.75 * x.pow(3.0)
+    val areaResult = Math.PI * 0.75 * sumResult.pow(3.0)
 
 //  Comparison Operators
     val comparingByLessThanResult = x < y
@@ -146,19 +152,14 @@ fun main() {
     println(line)
     println(line)
     println("ARITHMETIC OPERATIONS:")
-    println("\nValues: \n x = $x \n y = $y\n z = $z\n")
-    println(String.format("%-35s %s","The sum of x and y is: ", sumResultOf2))
-    println(String.format("%-35s %s","The difference of x and y is: ", differenceResultOf2))
-    println(String.format("%-35s %s","The product of x and y is: ", productResultOf2))
-    println(String.format("%-35s %s","The quotient of x and y is: ", quotientResultOf2))
+    println(String.format("%-35s %s","The sum of all values is: ", sumResult))
+    println(String.format("%-35s %s","The difference of all values is: ", differenceResult))
+    println(String.format("%-35s %s","The product of all values is: ", productResult))
+    println(String.format("%-35s %s","The quotient of all values is: ", quotientResult))
     println()
-    println(String.format("%-35s %s","The sum of x, y, and z is: ", sumResultOf3))
-    println(String.format("%-35s %s","The difference of x, y, and z is: ", differenceResultOf3))
-    println(String.format("%-35s %s","The product of x, y, and z is: ", productResultOf3))
-    println(String.format("%-35s %s","The quotient of x, y, and z is: ", quotientResultOf3))
     println("\nSample Computation of getting the area of a spherical object (x):\n")
-    println("Formula: 0.75 * %{Math.PI} * radius (x) ^ 3\n")
-    println(String.format("%-35s %s", "The area of $x is:", areaResult))
+    println("Formula: 0.75 * %{Math.PI} * radius (Sum of all values) ^ 3\n")
+    println(String.format("%-35s %s", "The area of $sumResult is:", areaResult))
     println(line)
     println(line)
     println("STRING")
@@ -185,17 +186,16 @@ fun main() {
 
 //  IF Conditions
     println("\nConditional Statements")
-    println("\nIf Else Conditions - if condition is true, the appropriate lines will work. Else skipped.")
-    println("\nExample:")
-    println("\n1. Result will state if $x is less, equal, or greater than $y")
-    if (x < y)
-        println("Result: $x is less than $y")
-    else if(x > y)
-        println("Result: $x is greater than $y")
-     else
-        println("Result: $x is equal to $y")
+//    println("\nExample:")
+//    println("\n1. Result will state if $x is less, equal, or greater than $y")
+//    if (x < y)
+//        println("Result: $x is less than $y")
+//    else if(x > y)
+//        println("Result: $x is greater than $y")
+//     else
+//        println("Result: $x is equal to $y")
 
-    println("\n2. Check if word is a palindrome.")
+    println("\nCheck if word is a palindrome.")
     println("Values: \n word = $wordToCheckForPalindrome \n reversed = ${wordToCheckForPalindrome.reversed()}")
     if (wordToCheckForPalindrome == wordToCheckForPalindrome.reversed())
         println("The word $string is a palindrome")
