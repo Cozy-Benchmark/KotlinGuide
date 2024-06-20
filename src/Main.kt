@@ -72,11 +72,14 @@ fun main() {
     print("Any word or phrase: ")
     val string: String? = readlnOrNull()
 
-
     if (x == null || y == null || z == null || string == null){
         exitProcess(1)
     }
-
+//  Array
+    val array = arrayOf(x, y, z)
+    println(array[0])
+    println(array[1])
+    println(array[2])
     //  val z: Int = if ((x + y) > 10) 3 else 4
     val wordToCheckForPalindrome: String = string.replace("\\s".toRegex(), "").lowercase()
 
