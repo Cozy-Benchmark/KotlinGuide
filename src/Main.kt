@@ -306,6 +306,10 @@ fun guessingTheNumber() : Unit{
     }
 }
 
+fun paramaterUsingVargarg(vararg list: Int){
+
+}
+
 fun searchForNumberTutorialExercise(list: List<Int>, searchee: Int = 0) : Int {
     var searched = -1
 
