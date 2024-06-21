@@ -10,45 +10,45 @@ fun main() {
     println(line)
 
 //      User Input
-    println("Please input the necessary values:")
-    print("w: ")
-    val w: Double? = readlnOrNull()?.toDoubleOrNull()
-
-    print("x: ")
-    val x: Double? = readlnOrNull()?.toDoubleOrNull()
-
-    print("y: ")
-    val y: Double? = readlnOrNull()?.toDoubleOrNull()
-
-    print("z: ")
-    val z: Double? = readlnOrNull()?.toDoubleOrNull()
-
-    print("Any word or phrase: ")
-    val string: String? = readlnOrNull()
-
-    if (w == null || x == null || y == null || z == null || string == null) exitProcess(1)
+//    println("Please input the necessary values:")
+//    print("w: ")
+//    val w: Double? = readlnOrNull()?.toDoubleOrNull()
+//
+//    print("x: ")
+//    val x: Double? = readlnOrNull()?.toDoubleOrNull()
+//
+//    print("y: ")
+//    val y: Double? = readlnOrNull()?.toDoubleOrNull()
+//
+//    print("z: ")
+//    val z: Double? = readlnOrNull()?.toDoubleOrNull()
+//
+//    print("Any word or phrase: ")
+//    val string: String? = readlnOrNull()
+//
+//    if (w == null || x == null || y == null || z == null || string == null) exitProcess(1)
 
 //    Functions
     println(line)
     guessingTheNumber()
-    println(line)
-    getThePower()
-    println(line)
-    arithmeticOperationsTutorial(x, y, z)
-    println(line)
-    stringTutorial(string)
-    println(line)
-    logicalAndComparisonOperatorstTutorial(x,y,z)
-    println(line)
-    ifElseTutorial(x,y)
-    println(line)
-    palidromChecker(string)
-    println(line)
-    whenTutorial()
-    println(line)
-    listTutorial()
-    println(line)
-    notes()
+//    println(line)
+//    getThePower()
+//    println(line)
+//    arithmeticOperationsTutorial(x, y, z)
+//    println(line)
+//    stringTutorial(string)
+//    println(line)
+//    logicalAndComparisonOperatorstTutorial(x,y,z)
+//    println(line)
+//    ifElseTutorial(x,y)
+//    println(line)
+//    palidromChecker(string)
+//    println(line)
+//    whenTutorial()
+//    println(line)
+//    listTutorial()
+//    println(line)
+//    notes()
 }
 
 fun variablesTutorial(string: String = "") : Unit {
@@ -299,9 +299,19 @@ fun guessingTheNumber() : Unit{
         if (guessedNumber != null){
             var searchedNumber = searchForNumberTutorialExercise(list, guessedNumber)
 
+            println("--------------------------------")
             println("The list contained: $list")
             println("Guessed Number: $guessedNumber")
             println("Searched Number: ${if (searchedNumber == -1) "None" else searchedNumber}")
+            println("Sum of the List: ${list.sum()}")
+            println("Product of the List: ${list.product()}")
+            println("--------------------------------")
+
+            if(guessedNumber.isPrime()){
+                println("$guessedNumber is a Prime Number")
+            } else {
+                println("$guessedNumber is not a Prime Number")
+            }
         }
     }
 }
@@ -310,20 +320,52 @@ fun paramaterUsingVargarg(vararg list: Int){
 
 }
 
+
 fun searchForNumberTutorialExercise(list: List<Int>, searchee: Int = 0) : Int {
     var searched = -1
 
     for (i in list.indices){
         if(searchee == list[i]){
             searched = list[i]
+            println("------------------------------")
             println("You have guessed correctly!")
+            println("------------------------------")
             break
         }
     }
 
-    if (searched == -1) println("Better Luck Next Time!")
+    if (searched == -1) {
+        println("------------------------------")
+        println("Better Luck Next Time!")
+        println("------------------------------")
+    }
 
     return searched
+}
+
+fun Int.isPrime(): Boolean {
+    for(i in 2 until this -1){
+        if(this % i == 0){
+            return false
+        }
+    }
+    return true
+}
+
+fun List<Int>.sum(): Int {
+    var sum: Int = 0
+    for (i in this.indices){
+        sum += this[i]
+    }
+    return sum
+}
+
+fun List<Int>.product(): Int {
+    var product: Int = 1
+    for (i in this.indices){
+        product *= this[i]
+    }
+    return product
 }
 
 fun notes(): Unit{
