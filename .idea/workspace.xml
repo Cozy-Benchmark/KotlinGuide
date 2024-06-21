@@ -28,6 +28,9 @@
     &quot;accountId&quot;: &quot;f16efd77-4c23-4895-bcd7-6ef076ba37ae&quot;
   }
 }</component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/src/Main.kt" root0="SKIP_INSPECTION" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 7
 }</component>
@@ -41,7 +44,7 @@
   "keyToString": {
     "Kotlin.MainKt.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "tutorial/when",
+    "git-widget-placeholder": "tutorial/function__and__parameters",
     "kotlin-language-version-configured": "true",
     "onboarding.tips.debug.path": "D:/Bench/Android/KotlinGuide/src/Main.kt"
   }
