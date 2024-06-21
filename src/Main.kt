@@ -59,27 +59,43 @@ fun main() {
 //       x /= 1
 
 //    Example: Fibonacci Sequence base on input
-    val list = mutableListOf<Int>() // Empty list with the type of Int
-    print("Enter a number > 1: ")
-    var read = readlnOrNull()?.toInt() ?: exitProcess(1)
+//    val list = mutableListOf<Int>() // Empty list with the type of Int
+//    print("Enter a number > 1: ")
+//    var read = readlnOrNull()?.toInt() ?: exitProcess(1)
+//
+//    if (read <= 0){
+//        println("Wrong Input")
+//        exitProcess(1)
+//    }
+//
+//    var firstNumber: Int = 0
+//    var secondNumber: Int = 1
+//    var sum: Int = 0
+//    while(read > 0){
+//        list.add(firstNumber)
+//        sum = firstNumber + secondNumber
+//        firstNumber = secondNumber
+//        secondNumber = sum
+//        read--
+//    }
+//    println("List: $list")
+////    println("List: ${list.reversed()}") // Reverses a list
+//    exitProcess(1)
 
-    if (read <= 0){
-        println("Wrong Input")
-        exitProcess(1)
+//    Example: When
+    print("Age: ")
+    val age = readlnOrNull()?.toInt() ?: exitProcess(1)
+    when(age){
+        in 0..12 -> println("You're a child.")
+        in 13..19 -> println("You're a teenager.")
+        20 -> {
+            println("You're in your adulating phase.")
+            println("Get Good!")
+        }
+        21,22,23 -> println("You're Lost in life.")
+        in 24..65 -> println("You're an adult.")
+        else -> println("You're old.")
     }
-
-    var firstNumber: Int = 0
-    var secondNumber: Int = 1
-    var sum: Int = 0
-    while(read > 0){
-        list.add(firstNumber)
-        sum = firstNumber + secondNumber
-        firstNumber = secondNumber
-        secondNumber = sum
-        read--
-    }
-    println("List: $list")
-//    println("List: ${list.reversed()}") // Reverses a list
     exitProcess(1)
 
 //  User Input
