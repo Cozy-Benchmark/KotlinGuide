@@ -9,7 +9,7 @@ fun main() {
     println("Hello User!")
     println(line)
 
-    //  User Input
+//      User Input
     println("Please input the necessary values:")
     print("w: ")
     val w: Double? = readlnOrNull()?.toDoubleOrNull()
@@ -28,9 +28,13 @@ fun main() {
 
     if (w == null || x == null || y == null || z == null || string == null) exitProcess(1)
 
-    val array = arrayOf(x, y, z)
-
-    arithmeticOperationsTutorial(array)
+//    Functions
+    println(line)
+    guessingTheNumber()
+    println(line)
+    getThePower()
+    println(line)
+    arithmeticOperationsTutorial(x, y, z)
     println(line)
     stringTutorial(string)
     println(line)
@@ -47,8 +51,8 @@ fun main() {
     notes()
 }
 
-fun variablesTutorial(string: String){
-    println("VARIABLES:\n")
+fun variablesTutorial(string: String = "") : Unit {
+    println("\nVARIABLES:\n")
 
     //  Variables
     val characterValue: Char = 'A'       // Character
@@ -96,7 +100,7 @@ fun variablesTutorial(string: String){
     println("IN LINE CALLING OF VARIABLE: $string")
 }
 
-fun arithmeticOperationsTutorial(array: Array<Double>){
+fun arithmeticOperationsTutorial(x: Double = 1.0, y: Double = 1.0, z: Double = 1.0 ) : Unit{
     //  ARITHMETIC OPERATIONS
     //    Values
     //    Integer (Computation with Integer Numbers)
@@ -118,7 +122,9 @@ fun arithmeticOperationsTutorial(array: Array<Double>){
     //       x *= x
     //       x /= 1
 
-    println("ARITHMETIC OPERATIONS:")
+    val array = arrayOf(x, y, z)
+
+    println("\nARITHMETIC OPERATIONS:")
     var sumResult: Double = 0.0
     var differenceResult: Double = 0.0
     var productResult: Double = 1.0
@@ -144,15 +150,15 @@ fun arithmeticOperationsTutorial(array: Array<Double>){
     println(String.format("%-35s %s", "The area of $sumResult is:", areaResult))
 }
 
-fun stringTutorial(string: String){
-    println("STRING")
+fun stringTutorial(string: String) : Unit {
+    println("\nSTRING")
     println("\nString is: $string\n")
     println(String.format("%-35s %s","String in Upper Case: ", string.uppercase()))
     println(String.format("%-35s %s","String in Lower Case: ", string.lowercase()))
     println(String.format("%-35s %s","String in Reverse: ", string.reversed()))
 }
 
-fun logicalAndComparisonOperatorstTutorial(x: Double, y: Double, z: Double){
+fun logicalAndComparisonOperatorstTutorial(x: Double = 0.0, y: Double = 0.0, z: Double = 0.0) : Unit {
     //  Comparison Operators
     val comparingByLessThanResult = x < y
     val comparingByLessThanOrEqualResult = x <= y
@@ -170,7 +176,7 @@ fun logicalAndComparisonOperatorstTutorial(x: Double, y: Double, z: Double){
     val comparisonWithNotAndAndResult= !(x >= y) && (y <= z)
     val comparisonWithNotAndOrResult= !(x >= y) || (y <= z)
 
-    println("LOGICAL AND COMPARISON OPERATORS")
+    println("\nLOGICAL AND COMPARISON OPERATORS")
     println("\nComparison Operators:")
     println(String.format("%-15s %-45s %s", "(>)", "Is $x Greater Than $y:", comparisonByGreaterThanResult))
     println(String.format("%-15s %-45s %s", "(>=)", "Is $x Greater Than or Equal to $y:", comparisonByGreaterThanOrEqualResult))
@@ -185,7 +191,7 @@ fun logicalAndComparisonOperatorstTutorial(x: Double, y: Double, z: Double){
     println(String.format("%-15s %-45s %s", "(! and ||)", "Is !($x >= $y) || $y <= $z?", comparisonWithNotAndOrResult))
 }
 
-fun ifElseTutorial(x: Double = 0.0, y: Double = 0.0){
+fun ifElseTutorial(x: Double = 0.0, y: Double = 0.0) : Unit {
     println("\nIf Else Conditional Statements")
     println("\nExample:")
     println("\n1. Result will state if $x is less, equal, or greater than $y")
@@ -197,7 +203,7 @@ fun ifElseTutorial(x: Double = 0.0, y: Double = 0.0){
         println("Result: $x is equal to $y")
 }
 
-fun palidromChecker(string: String = "Orginal"){
+fun palidromChecker(string: String = "Orginal") : Unit {
     val wordToCheckForPalindrome: String = string.replace("\\s".toRegex(), "").lowercase()
     println("\nCheck if word is a palindrome.")
     println("Values: \n word = $wordToCheckForPalindrome \n reversed = ${wordToCheckForPalindrome.reversed()}")
@@ -205,13 +211,11 @@ fun palidromChecker(string: String = "Orginal"){
         println("The word $string is a palindrome")
     else
         println("The word $string is not a palindrome")
-
-    whenTutorial()
-    listTutorial()
 }
 
-fun whenTutorial(){
+fun whenTutorial() : Unit {
     //    Example: When
+    println("\nMessage base on age.")
     print("Age: ")
     val age = readlnOrNull()?.toInt() ?: exitProcess(1)
     when(age){
@@ -225,10 +229,9 @@ fun whenTutorial(){
         in 24..65 -> println("You're an adult.")
         else -> println("You're old.")
     }
-    exitProcess(1)
 }
 
-fun listTutorial(){
+fun listTutorial() : Unit{
     //  List
     //    val list = listOf(x, y, z)
     //    val mutableList = mutableListOf(x, y ,z)
@@ -239,6 +242,7 @@ fun listTutorial(){
     //    var i: Int = 0
 
     //    Example: Fibonacci Sequence base on input
+    println("\nGet the Fibonacci Sequence base on user input.")
     val list = mutableListOf<Int>() // Empty list with the type of Int
     print("Enter a number > 1: ")
     var read = readlnOrNull()?.toInt() ?: exitProcess(1)
@@ -259,14 +263,69 @@ fun listTutorial(){
     }
     println("List: $list")
     //    println("List: ${list.reversed()}") // Reverses a list
-    exitProcess(1)
+}
+
+fun getThePower() : Unit{
+    println("\nGet the power of a unit")
+    print("Base: ")
+    var base = readlnOrNull()?.toInt()
+    print("Exponent: ")
+    var exp = readlnOrNull()?.toInt()
+    if (base == null || exp == null) exitProcess(1)
+    var printPowerOfBase = returnFunctionTutorial(base,exp)
+    println("The result of 3 to the power of 5 is $printPowerOfBase")
+}
+
+fun returnFunctionTutorial(base: Int = 0, exponent: Int = 1) : Int {
+    var result: Int = 1
+    for (i in 1..exponent) result *= base
+    return result
+}
+
+fun guessingTheNumber() : Unit{
+    println("\nGuessing Game.")
+    var list = mutableListOf<Int>()
+    print("Input the size of the list:")
+    var length = readlnOrNull()?.toInt()
+    if(length != null){
+        while (length > 0){
+            var randomNumber = Random.nextInt(0,10)
+            list.add(randomNumber)
+            length--
+        }
+
+        print("Guess a number from 0 to 20: ")
+        var guessedNumber = readlnOrNull()?.toInt()
+        if (guessedNumber != null){
+            var searchedNumber = searchForNumberTutorialExercise(list, guessedNumber)
+
+            println("The list contained: $list")
+            println("Guessed Number: $guessedNumber")
+            println("Searched Number: ${if (searchedNumber == -1) "None" else searchedNumber}")
+        }
+    }
+}
+
+fun searchForNumberTutorialExercise(list: List<Int>, searchee: Int = 0) : Int {
+    var searched = -1
+
+    for (i in list.indices){
+        if(searchee == list[i]){
+            searched = list[i]
+            println("You have guessed correctly!")
+            break
+        }
+    }
+
+    if (searched == -1) println("Better Luck Next Time!")
+
+    return searched
 }
 
 fun notes(): Unit{
     println("\nNOTES:")
-    println("\nVal is constant.")
-    println("\nVar is modifiable.")
-    println("\nLogical Operators are not evaluated Left to Right. \n Its evaluated with AND (&&) as Priority and OR (||) as Second. \n Unless wrapped in Parenthesis ()")
-    println("\nValues of a List are Immutable but the Values of an Array are.")
-    println("\nMutable List however are mutable.")
+    println("\n1. Val is constant.")
+    println("\n2. Var is modifiable.")
+    println("\n3. Logical Operators are not evaluated Left to Right. \n Its evaluated with AND (&&) as Priority and OR (||) as Second. \n Unless wrapped in Parenthesis ()")
+    println("\n4.Values of a List are Immutable but the Values of an Array are. \n Mutable List however are mutable")
 }
