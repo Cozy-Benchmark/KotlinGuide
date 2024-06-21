@@ -9,6 +9,10 @@ fun main() {
     println("Hello User!")
     println(line)
 
+    val myRectangle = Rectangle(length = 4.0, width = 7.0)
+    val myCircle = Circle(5.0)
+    val myTriangle = Triangle(3.0,3.0,3.0)
+
 //      User Input
 //    println("Please input the necessary values:")
 //    print("w: ")
@@ -29,8 +33,8 @@ fun main() {
 //    if (w == null || x == null || y == null || z == null || string == null) exitProcess(1)
 
 //    Functions
-    println(line)
-    guessingTheNumber()
+//    println(line)
+//    guessingTheNumber()
 //    println(line)
 //    getThePower()
 //    println(line)
