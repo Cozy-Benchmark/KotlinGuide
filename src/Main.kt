@@ -58,8 +58,35 @@ fun main() {
 //       x *= x
 //       x /= 1
 
-    //  User Input
+//    Example: Fibonacci Sequence base on input
+    val list = mutableListOf<Int>() // Empty list with the type of Int
+    print("Enter a number > 1: ")
+    var read = readlnOrNull()?.toInt() ?: exitProcess(1)
+
+    if (read <= 0){
+        println("Wrong Input")
+        exitProcess(1)
+    }
+
+    var firstNumber: Int = 0
+    var secondNumber: Int = 1
+    var sum: Int = 0
+    while(read > 0){
+        list.add(firstNumber)
+        sum = firstNumber + secondNumber
+        firstNumber = secondNumber
+        secondNumber = sum
+        read--
+    }
+    println("List: $list")
+//    println("List: ${list.reversed()}") // Reverses a list
+    exitProcess(1)
+
+//  User Input
     println("Please input the necessary values:")
+    print("w: ")
+    val w: Double? = readlnOrNull()?.toDoubleOrNull()
+
     print("x: ")
     val x: Double? = readlnOrNull()?.toDoubleOrNull()
 
@@ -69,15 +96,22 @@ fun main() {
     print("z: ")
     val z: Double? = readlnOrNull()?.toDoubleOrNull()
 
+
     print("Any word or phrase: ")
     val string: String? = readlnOrNull()
 
-    if (x == null || y == null || z == null || string == null){
+    if (w == null || x == null || y == null || z == null || string == null){
         exitProcess(1)
     }
 
 //  Array
     val array = arrayOf(x, y, z)
+//  List
+//    val list = listOf(x, y, z)
+//    val mutableList = mutableListOf(x, y ,z)
+//    mutableList.add(w) // add to list (increase length and add value of w to end)
+//    mutableList.remove(w) // removes the element with the same value of argument
+//    mutableList.removeAt(3) // removes the index in the position of the argument
 //    val arraySize = array.size
 //    var i: Int = 0
 
@@ -126,6 +160,8 @@ fun main() {
     println("\nVal is constant.")
     println("\nVar is modifiable.")
     println("\nLogical Operators are not evaluated Left to Right. \n Its evaluated with AND (&&) as Priority and OR (||) as Second. \n Unless wrapped in Parenthesis ()")
+    println("\nValues of a List are Immutable but the Values of an Array are.")
+    println("\nMutable List however are mutable.")
     println(line)
     println(line)
     println("VARIABLES:\n")
@@ -201,4 +237,6 @@ fun main() {
         println("The word $string is a palindrome")
     else
         println("The word $string is not a palindrome")
+
+
 }
