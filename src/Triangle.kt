@@ -4,9 +4,9 @@ class Triangle(
     private val sideA: Double = 1.0,
     private val sideB: Double = 1.0,
     private val sideC: Double = 1.0
-) {
+) : Shape("Triangle") {
     init {
-        println("Triangle Successfully Created!")
+        println("$name Successfully Created!")
         println("----------------------------------")
         println(String.format("%-1s %-30s %s", "|", "Values","|"))
         println("----------------------------------")
@@ -21,7 +21,7 @@ class Triangle(
     fun area() : Double {
         val semiPerimeter = (sideA + sideB + sideC) / 2
 
-        val area = sqrt((semiPerimeter * (semiPerimeter - sideA) * (semiPerimeter - sideB) * (semiPerimeter - sideC)))
+        val area = sqrt(semiPerimeter * (semiPerimeter - sideA) * (semiPerimeter - sideB) * (semiPerimeter - sideC))
         return area
     }
 

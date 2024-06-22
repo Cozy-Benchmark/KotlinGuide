@@ -9,10 +9,16 @@ fun main() {
     println("Hello User!")
     println(line)
 
+//  Classes
     val myRectangle = Rectangle(length = 4.0, width = 7.0)
+    myRectangle.changeName("Bench's Rectangle")
+    println("Rectangle Name: ${myRectangle.name}")
     val myCircle = Circle(5.0)
+    myCircle.changeName("Bench's Circle")
+    println("Circle Name: ${myCircle.name}")
     val myTriangle = Triangle(3.0,3.0,3.0)
-
+    myTriangle.changeName("Bench's Triangle")
+    println("Triangle Name: ${myTriangle.name}")
 //      User Input
 //    println("Please input the necessary values:")
 //    print("w: ")
