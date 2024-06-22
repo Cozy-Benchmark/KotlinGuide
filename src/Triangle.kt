@@ -18,12 +18,12 @@ class Triangle(
         println("----------------------------------")
     }
 
-    fun area() : Double {
+    override fun area() : Double {
         val semiPerimeter = (sideA + sideB + sideC) / 2
 
         val area = sqrt(semiPerimeter * (semiPerimeter - sideA) * (semiPerimeter - sideB) * (semiPerimeter - sideC))
         return area
     }
 
-    fun perimeter() = sideA + sideB + sideC
+    override fun perimeter() : Double = sideA + sideB + sideC
 }

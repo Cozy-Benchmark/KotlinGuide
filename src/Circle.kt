@@ -15,7 +15,7 @@ class Circle(
         println("----------------------------------")
     }
 
-    fun area() = radius * radius * Math.PI
+    override fun area() : Double = radius * radius * Math.PI
 
-    fun perimeter() = 2 * radius * Math.PI
+    override fun perimeter() : Double = 2 * radius * Math.PI
 }

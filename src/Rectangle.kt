@@ -1,3 +1,5 @@
+import java.util.function.BiPredicate
+
 class Rectangle(
     // Constructor - values need to create a class
     val length: Double = 1.0,
@@ -18,9 +20,9 @@ class Rectangle(
         println("----------------------------------")
     }
 
-    fun area() = length * width
+    override fun area() : Double = length * width
 
-    fun perimeter() = (2 * length ) + (2 * width)
+    override fun perimeter() : Double = (2 * length ) + (2 * width)
 
-    fun isSquare() = length == width
+    fun isSquare() : Boolean = length == width
 }
