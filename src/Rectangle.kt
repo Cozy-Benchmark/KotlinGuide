@@ -1,7 +1,7 @@
 class Rectangle(
     // Constructor - values need to create a class
-    private val length: Double = 1.0,
-    private val width: Double = 1.0
+    val length: Double = 1.0,
+    val width: Double = 1.0
 ) : Shape("Rectangle"){
     // Init Block - logic to be executed when an instance is created
     //            - always executes

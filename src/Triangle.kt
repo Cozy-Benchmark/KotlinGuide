@@ -1,9 +1,9 @@
 import kotlin.math.sqrt
 
 class Triangle(
-    private val sideA: Double = 1.0,
-    private val sideB: Double = 1.0,
-    private val sideC: Double = 1.0
+    val sideA: Double = 1.0,
+    val sideB: Double = 1.0,
+    val sideC: Double = 1.0
 ) : Shape("Triangle") {
     init {
         println("$name Successfully Created!")

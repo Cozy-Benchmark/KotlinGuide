@@ -2,7 +2,7 @@ import kotlin.math.roundToInt
 import kotlin.math.roundToLong
 
 class Circle(
-    private val radius: Double = 1.0
+    val radius: Double = 1.0
 ) : Shape("Circle") {
     init {
         println("$name Successfully Created!")
