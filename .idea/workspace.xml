@@ -6,10 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="1a650fd2-85a2-4d10-85ba-02e40bd4417d" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Circle.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/Circle.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Rectangle.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/Rectangle.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Shape.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/Shape.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Triangle.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/Triangle.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,7 +55,7 @@
   "keyToString": {
     "Kotlin.MainKt.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "tutorial/abstract",
+    "git-widget-placeholder": "tutorial/constructors",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/bryan/IdeaProjects/KotlinGuide",
     "onboarding.tips.debug.path": "D:/Bench/Android/KotlinGuide/src/Main.kt"

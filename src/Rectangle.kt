@@ -5,6 +5,16 @@ class Rectangle(
     val length: Double = 1.0,
     val width: Double = 1.0
 ) : Shape("Rectangle"){
+
+    // Creates a Rectangle if only given 1 value - Place 1 value to be all sides
+    constructor(length: Double) : this(length,length)
+
+    // Create a Rectangle with only Int values - Turn int Values to Double values
+    constructor(length: Int, width: Int): this(length.toDouble(), width.toDouble())
+
+    // Create a Rectangle with only 1 given value and also an Int value - Accepts 1 value and converts Int to Double
+    constructor(length: Int) : this(length.toDouble(), length.toDouble())
+
     // Init Block - logic to be executed when an instance is created
     //            - always executes
     init {

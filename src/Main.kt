@@ -2,6 +2,39 @@ import kotlin.math.pow
 import kotlin.random.Random
 import kotlin.system.exitProcess
 
+fun maxArea(shape1: Shape, shape2: Shape) : Shape {
+    val areaShape1 = shape1.area()
+    val areaShape2 = shape2.area()
+
+    if(areaShape1 > areaShape2)
+        return shape1
+     else
+        return shape2
+
+}
+
+fun maxArea(shape1: Shape, shape2: Shape, shape3: Shape) : Shape {
+//    Long War
+//    val areaShape1 = shape1.area()
+//    val areaShape2 = shape2.area()
+//    val areaShape3 = shape3.area()
+//
+//    if (areaShape1 > areaShape2  && areaShape1 > areaShape3)
+//        return areaShape1
+//    else if(areaShape2 > areaShape1 && areaShape2 > areaShape3)
+//        return areaShape2
+//     else
+//        return areaShape3
+//
+    val maxAreaShape1And2 = maxArea(shape1, shape2)
+    val areaShape3 = shape3.area()
+
+    if (maxAreaShape1And2.area() >  areaShape3)
+        return maxAreaShape1And2
+    else
+        return shape3
+}
+
 fun main() {
     val line: String = "--------------------------------------------------------------------------"
     //  Printing
@@ -10,15 +43,51 @@ fun main() {
     println(line)
 
 //  Classes
-    val myRectangle = Rectangle(length = 4.0, width = 7.0)
+    val myRectangle = Rectangle(length = 4.0, width = 4.0)
     myRectangle.changeName("Bench's Rectangle")
     println("Rectangle Name: ${myRectangle.name}")
+
+    println(line)
+
+    val myRectangleSingleValue = Rectangle(4.0)
+    myRectangleSingleValue.changeName("Bench's Single Value Rectangle")
+    println("Rectangle Name: ${myRectangleSingleValue.name}")
+
+    println(line)
+
+    val myRectangleInt = Rectangle(4,4)
+    myRectangleInt.changeName("Bench's Int Value Rectangle")
+    println("Rectangle Name: ${myRectangleInt.name}")
+
+    println(line)
+
+    val myRectangleSingleValueAndInt = Rectangle(4)
+    myRectangleSingleValueAndInt.changeName("Bench's Single Int Value Rectangle")
+    println("Rectangle Name: ${myRectangleSingleValueAndInt.name}")
+
+    println(line)
+
     val myCircle = Circle(5.0)
     myCircle.changeName("Bench's Circle")
     println("Circle Name: ${myCircle.name}")
+
+    println(line)
+
     val myTriangle = Triangle(3.0,3.0,3.0)
     myTriangle.changeName("Bench's Triangle")
     println("Triangle Name: ${myTriangle.name}")
+
+    println(line)
+
+    println("Getting the Shape wiht the largest Area:")
+    val largestAreaRectAndTria = maxArea(myRectangle, myTriangle)
+    val largestAreaRectandTriaAndCir = maxArea(myRectangle, myTriangle, myCircle)
+    println("Largest between ${myRectangle.name} and ${myTriangle.name} is: ${largestAreaRectAndTria.name} with ${largestAreaRectAndTria.area()}")
+    println("Largest between ${myRectangle.name}, ${myTriangle.name}, and ${myCircle.name} is: ${largestAreaRectandTriaAndCir.name} with ${largestAreaRectandTriaAndCir.area()}")
+
+    println(line)
+    organizeList()
+
 //      User Input
 //    println("Please input the necessary values:")
 //    print("w: ")
@@ -59,6 +128,69 @@ fun main() {
 //    listTutorial()
 //    println(line)
 //    notes()
+}
+
+fun organizeList() : Unit {
+    var list = mutableListOf<Int>()
+    var randomNumber: Int = 0
+
+    print("Please Input the size of the List: ")
+    var listSize = readlnOrNull()?.toInt()
+
+    if (listSize == null){
+        println("Invalid Input!")
+        exitProcess(1)
+    }
+
+    if (listSize <= 0 ) {
+        println("Size too small...")
+        exitProcess(1)
+    }
+
+    var start: Int = 0
+    var end = listSize - 1
+    while (listSize > 0){
+        randomNumber = Random.nextInt(1, 100)
+        list.add(randomNumber)
+        listSize--
+    }
+
+    println("List Details:")
+    println("List: $list")
+
+    while (start < end){
+        println("List Index $start with Value of ${list[start]}")
+        println("List Index $end with Value of ${list[end]}")
+
+        start++
+        end--
+        if (start == end) println("List Index $start with Value of ${list[start]}")
+    }
+}
+
+fun generateList() : List<Int>{
+    print("Please Input the size of the List: ")
+    var listSize = readlnOrNull()?.toInt()
+    val list = mutableListOf<Int>()
+    var randomNumber: Int = 0
+
+    if (listSize == null){
+        println("Invalid Input!")
+        exitProcess(1)
+    }
+
+    if (listSize <= 0 ) {
+        println("Size too small...")
+        exitProcess(1)
+    }
+
+    while (listSize > 0){
+        randomNumber = Random.nextInt(1, 100)
+        list.add(randomNumber)
+        listSize--
+    }
+
+    return list
 }
 
 fun variablesTutorial(string: String = "") : Unit {
