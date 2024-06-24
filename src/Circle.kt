@@ -1,9 +1,20 @@
 import kotlin.math.roundToInt
 import kotlin.math.roundToLong
+import kotlin.random.Random
 
 class Circle(
     val radius: Double = 1.0
 ) : Shape("Circle") {
+
+    constructor(radius: Int) : this(radius.toDouble())
+
+    companion object {
+        fun randomCircle() : Circle {
+            val radius = Random.nextDouble(1.0, 10.0)
+            return Circle(radius)
+        }
+    }
+
     init {
         println("$name Successfully Created!")
         println("----------------------------------")
@@ -15,7 +26,7 @@ class Circle(
         println("----------------------------------")
     }
 
-    override fun area() : Double = radius * radius * Math.PI
+    override fun area() : Double = radius * radius * ImportantNumbers.PI
 
-    override fun perimeter() : Double = 2 * radius * Math.PI
+    override fun perimeter() : Double = 2 * radius * ImportantNumbers.PI
 }

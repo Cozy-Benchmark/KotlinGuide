@@ -1,11 +1,12 @@
 import java.util.function.BiPredicate
+import kotlin.random.Random
 
 class Rectangle(
     // Constructor - values need to create a class
     val length: Double = 1.0,
     val width: Double = 1.0
 ) : Shape("Rectangle"){
-
+    
     // Creates a Rectangle if only given 1 value - Place 1 value to be all sides
     constructor(length: Double) : this(length,length)
 
@@ -14,6 +15,15 @@ class Rectangle(
 
     // Create a Rectangle with only 1 given value and also an Int value - Accepts 1 value and converts Int to Double
     constructor(length: Int) : this(length.toDouble(), length.toDouble())
+
+    companion object {
+        fun randomRectangle() : Rectangle {
+            val length = Random.nextDouble(1.0, 10.0)
+            val width = Random.nextDouble(1.0, 10.0)
+
+            return Rectangle(length, width)
+        }
+    }
 
     // Init Block - logic to be executed when an instance is created
     //            - always executes

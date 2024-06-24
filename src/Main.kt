@@ -2,39 +2,6 @@ import kotlin.math.pow
 import kotlin.random.Random
 import kotlin.system.exitProcess
 
-fun maxArea(shape1: Shape, shape2: Shape) : Shape {
-    val areaShape1 = shape1.area()
-    val areaShape2 = shape2.area()
-
-    if(areaShape1 > areaShape2)
-        return shape1
-     else
-        return shape2
-
-}
-
-fun maxArea(shape1: Shape, shape2: Shape, shape3: Shape) : Shape {
-//    Long War
-//    val areaShape1 = shape1.area()
-//    val areaShape2 = shape2.area()
-//    val areaShape3 = shape3.area()
-//
-//    if (areaShape1 > areaShape2  && areaShape1 > areaShape3)
-//        return areaShape1
-//    else if(areaShape2 > areaShape1 && areaShape2 > areaShape3)
-//        return areaShape2
-//     else
-//        return areaShape3
-//
-    val maxAreaShape1And2 = maxArea(shape1, shape2)
-    val areaShape3 = shape3.area()
-
-    if (maxAreaShape1And2.area() >  areaShape3)
-        return maxAreaShape1And2
-    else
-        return shape3
-}
-
 fun main() {
     val line: String = "--------------------------------------------------------------------------"
     //  Printing
@@ -67,15 +34,69 @@ fun main() {
 
     println(line)
 
+    val myRandomRectangle = Rectangle.randomRectangle()
+    myRandomRectangle.changeName("Random Rectangle")
+    println("Rectangle name: ${myRandomRectangle.name}")
+
+    println(line)
+
     val myCircle = Circle(5.0)
     myCircle.changeName("Bench's Circle")
     println("Circle Name: ${myCircle.name}")
 
     println(line)
 
+    val myCircleInt = Circle(5)
+    myCircleInt.changeName("Bench's Int Value Circle")
+    println("Circle Name: ${myCircleInt.name}")
+
+    println(line)
+
+    val myRandomCircle = Circle.randomCircle()
+    myRandomCircle.changeName("Random Circle")
+    println("Circle Name: ${myRandomCircle.name}")
+
+    println(line)
+
     val myTriangle = Triangle(3.0,3.0,3.0)
     myTriangle.changeName("Bench's Triangle")
     println("Triangle Name: ${myTriangle.name}")
+
+    println(line)
+
+    val myTriangleInt = Triangle(3,3,3)
+    myTriangleInt.changeName("Bench's Int Value Triangle")
+    println("Triangle Name: ${myTriangleInt.name}")
+
+    println(line)
+
+    val myTriangleTwoSides = Triangle(3.0,3.0)
+    myTriangleTwoSides.changeName("Bench's Two Side Value Triangle")
+    println("Triangle Name: ${myTriangleTwoSides.name}")
+
+    println(line)
+
+    val myTriangleTwoSidesInt = Triangle(3,3)
+    myTriangleTwoSidesInt.changeName("Bench's Two Side Int Value Triangle")
+    println("Triangle Name: ${myTriangleTwoSidesInt.name}")
+
+    println(line)
+
+    val myTriangleOneSide = Triangle(3.0)
+    myTriangleOneSide.changeName("Bench's One Side Value Triangle")
+    println("Triangle Name: ${myTriangleOneSide.name}")
+
+    println(line)
+
+    val myTriangleOneSideInt = Triangle(3.0)
+    myTriangleOneSideInt.changeName("Bench's One Side Int Value Triangle")
+    println("Triangle Name: ${myTriangleOneSideInt.name}")
+
+    println(line)
+
+    val myRandomTriangle = Triangle.randomTriangle()
+    myRandomTriangle.changeName("Bench's Random Triangle")
+    println("Triangle Name: ${myRandomTriangle.name}")
 
     println(line)
 
@@ -128,6 +149,39 @@ fun main() {
 //    listTutorial()
 //    println(line)
 //    notes()
+}
+
+fun maxArea(shape1: Shape, shape2: Shape) : Shape {
+    val areaShape1 = shape1.area()
+    val areaShape2 = shape2.area()
+
+    if(areaShape1 > areaShape2)
+        return shape1
+    else
+        return shape2
+
+}
+
+fun maxArea(shape1: Shape, shape2: Shape, shape3: Shape) : Shape {
+//    Long War
+//    val areaShape1 = shape1.area()
+//    val areaShape2 = shape2.area()
+//    val areaShape3 = shape3.area()
+//
+//    if (areaShape1 > areaShape2  && areaShape1 > areaShape3)
+//        return areaShape1
+//    else if(areaShape2 > areaShape1 && areaShape2 > areaShape3)
+//        return areaShape2
+//     else
+//        return areaShape3
+//
+    val maxAreaShape1And2 = maxArea(shape1, shape2)
+    val areaShape3 = shape3.area()
+
+    if (maxAreaShape1And2.area() >  areaShape3)
+        return maxAreaShape1And2
+    else
+        return shape3
 }
 
 fun organizeList() : Unit {
