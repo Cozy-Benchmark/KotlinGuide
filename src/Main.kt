@@ -100,14 +100,21 @@ fun main() {
 
     println(line)
 
-    println("Getting the Shape wiht the largest Area:")
-    val largestAreaRectAndTria = maxArea(myRectangle, myTriangle)
-    val largestAreaRectandTriaAndCir = maxArea(myRectangle, myTriangle, myCircle)
-    println("Largest between ${myRectangle.name} and ${myTriangle.name} is: ${largestAreaRectAndTria.name} with ${largestAreaRectAndTria.area()}")
-    println("Largest between ${myRectangle.name}, ${myTriangle.name}, and ${myCircle.name} is: ${largestAreaRectandTriaAndCir.name} with ${largestAreaRectandTriaAndCir.area()}")
+    parallelogram()
 
     println(line)
-    organizeList()
+
+    trapezoid()
+
+
+//    println("Getting the Shape wiht the largest Area:")
+//    val largestAreaRectAndTria = maxArea(myRectangle, myTriangle)
+//    val largestAreaRectandTriaAndCir = maxArea(myRectangle, myTriangle, myCircle)
+//    println("Largest between ${myRectangle.name} and ${myTriangle.name} is: ${largestAreaRectAndTria.name} with ${largestAreaRectAndTria.area()}")
+//    println("Largest between ${myRectangle.name}, ${myTriangle.name}, and ${myCircle.name} is: ${largestAreaRectandTriaAndCir.name} with ${largestAreaRectandTriaAndCir.area()}")
+//
+//    println(line)
+//    organizeList()
 
 //      User Input
 //    println("Please input the necessary values:")
@@ -149,6 +156,72 @@ fun main() {
 //    listTutorial()
 //    println(line)
 //    notes()
+}
+
+fun parallelogram() : Unit{
+    val a = 3.0
+    val b = 4.0
+    val height = 2.0
+    val parallelogram = object : Shape("Parallelogram", a ,b, height){
+
+        init {
+            println("$name Successfully Created!")
+            println("----------------------------------")
+            println(String.format("%-1s %-30s %s", "|", "Values","|"))
+            println("----------------------------------")
+            println(String.format("%-1s %-10s %-13s %-5s %s", "|", "Side A", "|", a, "|",))
+            println(String.format("%-1s %-10s %-13s %-5s %s", "|", "Side B", "|", b, "|",))
+            println(String.format("%-1s %-10s %-13s %-5s %s", "|", "Height", "|", height, "|",))
+            println(String.format("%-1s %-10s %-13s %-5s %s", "|", "Area", "|", area(), "|",))
+            println(String.format("%-1s %-10s %-13s %-5s %s", "|", "Perimeter", "|", perimeter(), "|",))
+            println("----------------------------------")
+        }
+
+        override fun area(): Double {
+            return a * height
+        }
+
+        override fun perimeter(): Double {
+            return (2 * a) + (2 * b)
+        }
+
+        fun isRectangle() : Boolean = height == b
+
+    }
+
+    println("Is the Parallelogram a Rectangle?: ${parallelogram.isRectangle()}")
+}
+
+fun trapezoid() : Unit {
+    val a: Double = 4.0
+    val b: Double = 4.0
+    val c: Double = 3.0
+    val d: Double = 2.0
+    val height: Double = 4.0
+    val trapezoid = object : Shape("Trapezoid", a, b, c, d, height){
+        init {
+            println("$name Successfully Created!")
+            println("----------------------------------")
+            println(String.format("%-1s %-30s %s", "|", "Values","|"))
+            println("----------------------------------")
+            println(String.format("%-1s %-10s %-13s %-5s %s", "|", "Side A", "|", a, "|",))
+            println(String.format("%-1s %-10s %-13s %-5s %s", "|", "Side B", "|", b, "|",))
+            println(String.format("%-1s %-10s %-13s %-5s %s", "|", "Side C", "|", c, "|",))
+            println(String.format("%-1s %-10s %-13s %-5s %s", "|", "Side D", "|", d, "|",))
+            println(String.format("%-1s %-10s %-13s %-5s %s", "|", "Height", "|", height, "|",))
+            println(String.format("%-1s %-10s %-13s %-5s %s", "|", "Area", "|", area(), "|",))
+            println(String.format("%-1s %-10s %-13s %-5s %s", "|", "Perimeter", "|", perimeter(), "|",))
+            println("----------------------------------")
+        }
+
+        override fun area(): Double = ((a+b)/2)*height
+
+        override fun perimeter(): Double = a + b + c + d
+
+        fun isRectangle() : Boolean = a == b && c == d && height == a
+    }
+
+    println("Is the trapeziod a rectangle? : ${trapezoid.isRectangle()}")
 }
 
 fun maxArea(shape1: Shape, shape2: Shape) : Shape {

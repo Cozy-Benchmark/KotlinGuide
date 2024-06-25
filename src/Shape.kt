@@ -1,6 +1,9 @@
 abstract class Shape(
     var name: String = "Shape"
 ) {
+
+    constructor(name: String, vararg dimensions: Double) : this(name)
+
     init {
         println("Shape is this class's Superclass")
     }
