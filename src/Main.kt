@@ -9,7 +9,54 @@ fun main() {
     println("Hello User!")
     println(line)
 
-//  Classes
+    organizeList()
+    println(line)
+
+//    shapes()
+//      User Input
+//    println("Please input the necessary values:")
+//    print("w: ")
+//    val w: Double? = readlnOrNull()?.toDoubleOrNull()
+//
+//    print("x: ")
+//    val x: Double? = readlnOrNull()?.toDoubleOrNull()
+//
+//    print("y: ")
+//    val y: Double? = readlnOrNull()?.toDoubleOrNull()
+//
+//    print("z: ")
+//    val z: Double? = readlnOrNull()?.toDoubleOrNull()
+//
+//    print("Any word or phrase: ")
+//    val string: String? = readlnOrNull()
+//
+//    if (w == null || x == null || y == null || z == null || string == null) exitProcess(1)
+
+//    Functions
+//    println(line)
+//    guessingTheNumber()
+//    println(line)
+//    getThePower()
+//    println(line)
+//    arithmeticOperationsTutorial(x, y, z)
+//    println(line)
+//    stringTutorial(string)
+//    println(line)
+//    logicalAndComparisonOperatorstTutorial(x,y,z)
+//    println(line)
+//    ifElseTutorial(x,y)
+//    println(line)
+//    palidromChecker(string)
+//    println(line)
+//    whenTutorial()
+//    println(line)
+//    listTutorial()
+//    println(line)
+//    notes()
+}
+
+fun shapes() : Unit {
+    val line: String = "--------------------------------------------------------------------------"
     val myRectangle = Rectangle(length = 4.0, width = 4.0)
     myRectangle.changeName("Bench's Rectangle")
     println("Rectangle Name: ${myRectangle.name}")
@@ -55,6 +102,18 @@ fun main() {
     val myRandomCircle = Circle.randomCircle()
     myRandomCircle.changeName("Random Circle")
     println("Circle Name: ${myRandomCircle.name}")
+
+    println(line)
+    
+    try {
+        val circleTest = Circle(1)
+        circleTest.changeName("Bench's Circle Try and Catch Test")
+        println("Circle Name: ${circleTest.name}")
+    } catch (e : Circle.NegativeRadiusException) {
+        println("You Inpputed a Negative Value for Radius, which is Impossible to Create")
+    } finally {
+        println("Thank you.")
+    }
 
     println(line)
 
@@ -106,56 +165,12 @@ fun main() {
 
     trapezoid()
 
+    println("Getting the Shape wiht the largest Area:")
+    val largestAreaRectAndTria = maxArea(myRectangle, myTriangle)
+    val largestAreaRectandTriaAndCir = maxArea(myRectangle, myTriangle, myCircle)
+    println("Largest between ${myRectangle.name} and ${myTriangle.name} is: ${largestAreaRectAndTria.name} with ${largestAreaRectAndTria.area()}")
+    println("Largest between ${myRectangle.name}, ${myTriangle.name}, and ${myCircle.name} is: ${largestAreaRectandTriaAndCir.name} with ${largestAreaRectandTriaAndCir.area()}")
 
-//    println("Getting the Shape wiht the largest Area:")
-//    val largestAreaRectAndTria = maxArea(myRectangle, myTriangle)
-//    val largestAreaRectandTriaAndCir = maxArea(myRectangle, myTriangle, myCircle)
-//    println("Largest between ${myRectangle.name} and ${myTriangle.name} is: ${largestAreaRectAndTria.name} with ${largestAreaRectAndTria.area()}")
-//    println("Largest between ${myRectangle.name}, ${myTriangle.name}, and ${myCircle.name} is: ${largestAreaRectandTriaAndCir.name} with ${largestAreaRectandTriaAndCir.area()}")
-//
-//    println(line)
-//    organizeList()
-
-//      User Input
-//    println("Please input the necessary values:")
-//    print("w: ")
-//    val w: Double? = readlnOrNull()?.toDoubleOrNull()
-//
-//    print("x: ")
-//    val x: Double? = readlnOrNull()?.toDoubleOrNull()
-//
-//    print("y: ")
-//    val y: Double? = readlnOrNull()?.toDoubleOrNull()
-//
-//    print("z: ")
-//    val z: Double? = readlnOrNull()?.toDoubleOrNull()
-//
-//    print("Any word or phrase: ")
-//    val string: String? = readlnOrNull()
-//
-//    if (w == null || x == null || y == null || z == null || string == null) exitProcess(1)
-
-//    Functions
-//    println(line)
-//    guessingTheNumber()
-//    println(line)
-//    getThePower()
-//    println(line)
-//    arithmeticOperationsTutorial(x, y, z)
-//    println(line)
-//    stringTutorial(string)
-//    println(line)
-//    logicalAndComparisonOperatorstTutorial(x,y,z)
-//    println(line)
-//    ifElseTutorial(x,y)
-//    println(line)
-//    palidromChecker(string)
-//    println(line)
-//    whenTutorial()
-//    println(line)
-//    listTutorial()
-//    println(line)
-//    notes()
 }
 
 fun parallelogram() : Unit{
@@ -262,36 +277,44 @@ fun organizeList() : Unit {
     var randomNumber: Int = 0
 
     print("Please Input the size of the List: ")
-    var listSize = readlnOrNull()?.toInt()
+    try {
+        var listSize = readLine()?.toInt()
 
-    if (listSize == null){
-        println("Invalid Input!")
-        exitProcess(1)
-    }
+        if (listSize == null){
+            println("Invalid Input!")
+            exitProcess(1)
+        }
 
-    if (listSize <= 0 ) {
-        println("Size too small...")
-        exitProcess(1)
-    }
+        if (listSize <= 0 ) {
+            println("Size too small...")
+            exitProcess(1)
+        }
 
-    var start: Int = 0
-    var end = listSize - 1
-    while (listSize > 0){
-        randomNumber = Random.nextInt(1, 100)
-        list.add(randomNumber)
-        listSize--
-    }
+        var start: Int = 0
+        var end = listSize - 1
+        while (listSize > 0){
+            randomNumber = Random.nextInt(1, 100)
+            list.add(randomNumber)
+            listSize--
+        }
 
-    println("List Details:")
-    println("List: $list")
+        println("List Details:")
+        println("List: $list")
 
-    while (start < end){
-        println("List Index $start with Value of ${list[start]}")
-        println("List Index $end with Value of ${list[end]}")
+        while (start < end){
+            println("List Index $start with Value of ${list[start]}")
+            println("List Index $end with Value of ${list[end]}")
 
-        start++
-        end--
-        if (start == end) println("List Index $start with Value of ${list[start]}")
+            start++
+            end--
+            if (start == end) println("List Index $start with Value of ${list[start]}")
+        }
+    } catch (e: Exception) {
+        if (e is NumberFormatException){
+            println("Input is not a Valid Value, Please Try Again!")
+        } else {
+            println("Error on creating and organizing list: ${e.message}")
+        }
     }
 }
 

@@ -12,7 +12,7 @@ abstract class Shape(
 
     abstract fun perimeter() : Double
 
-    fun changeName(newName: String = "Shape Name"){
+    fun changeName(newName: String = "Shape Name") {
         name = newName
     }
 }

@@ -15,6 +15,8 @@ class Circle(
         }
     }
 
+    class NegativeRadiusException : Exception("You cannot have a negative radius when creating a Circle")
+
     init {
         println("$name Successfully Created!")
         println("----------------------------------")
@@ -26,7 +28,11 @@ class Circle(
         println("----------------------------------")
     }
 
-    override fun area() : Double = radius * radius * ImportantNumbers.PI
+    override fun area() : Double {
+        if (radius < 0) throw NegativeRadiusException() else return radius * radius * ImportantNumbers.PI
+    }
 
-    override fun perimeter() : Double = 2 * radius * ImportantNumbers.PI
+    override fun perimeter() : Double {
+        if (radius < 0) throw NegativeRadiusException() else return 2 * radius * ImportantNumbers.PI
+    }
 }
