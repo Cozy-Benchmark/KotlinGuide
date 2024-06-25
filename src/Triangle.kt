@@ -19,10 +19,10 @@ class Triangle(
 
     companion object {
         fun randomTriangle() : Triangle {
-            val sideA = Random.nextDouble(1.0, 10.0)
-            val sideB = Random.nextDouble(1.0, 10.0)
-            val sideC = Random.nextDouble(1.0, 10.0)
-            val randomizer = Random.nextInt(1, 10)
+            val sideA = Random.nextDouble(1.0, 20.0)
+            val sideB = Random.nextDouble(1.0, 20.0)
+            val sideC = Random.nextDouble(1.0, 20.0)
+            val randomizer = Random.nextInt(1, 20)
             return if (randomizer % 2 == 0){
                 Triangle(sideA)
             } else if (randomizer % 3 == 0){

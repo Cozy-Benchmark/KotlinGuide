@@ -9,10 +9,14 @@ fun main() {
     println("Hello User!")
     println(line)
 
-    organizeList()
+//    organizeList()
+//    println(line)
+
+    lambdaGetSum()
     println(line)
 
 //    shapes()
+//    println(line)
 //      User Input
 //    println("Please input the necessary values:")
 //    print("w: ")
@@ -170,7 +174,40 @@ fun shapes() : Unit {
     val largestAreaRectandTriaAndCir = maxArea(myRectangle, myTriangle, myCircle)
     println("Largest between ${myRectangle.name} and ${myTriangle.name} is: ${largestAreaRectAndTria.name} with ${largestAreaRectAndTria.area()}")
     println("Largest between ${myRectangle.name}, ${myTriangle.name}, and ${myCircle.name} is: ${largestAreaRectandTriaAndCir.name} with ${largestAreaRectandTriaAndCir.area()}")
+    println("-------------------------------------------------------")
+    var shapes = listOf<Shape>(myRandomCircle, myRandomRectangle, myRandomTriangle)
+    shapes = shapes.customFilter { it.area() > 30.0 }.sortedBy { it.area() }
+    for (shape in shapes){
+        println("${shape.name}'s area is ${shape.area()}")
+    }
+}
 
+fun List<Shape>.customFilter(filterFunction: (Shape) -> (Boolean)): List<Shape>{
+    val resultList = mutableListOf<Shape>()
+    for (shape in this){
+        if (filterFunction(shape)){
+            resultList.add(shape)
+        }
+    }
+
+    return resultList
+}
+
+fun lambdaGetSum(): Unit {
+    var list: List<Int> = (1..10).toList()
+    val sum = list.customSum { it % 2 == 1 }
+    println("The sum is $sum")
+}
+
+fun List<Int>.customSum(sumFunction: (Int) -> (Boolean)) : Int {
+    var sum: Int = 0
+    for (i in this){
+        if (sumFunction(i)){
+            sum += i
+        }
+    }
+
+    return sum
 }
 
 fun parallelogram() : Unit{

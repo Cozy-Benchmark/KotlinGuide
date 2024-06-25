@@ -18,8 +18,8 @@ class Rectangle(
 
     companion object {
         fun randomRectangle() : Rectangle {
-            val length = Random.nextDouble(1.0, 10.0)
-            val width = Random.nextDouble(1.0, 10.0)
+            val length = Random.nextDouble(1.0, 20.0)
+            val width = Random.nextDouble(1.0, 20.0)
 
             return Rectangle(length, width)
         }

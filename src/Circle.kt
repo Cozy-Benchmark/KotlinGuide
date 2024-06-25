@@ -10,7 +10,7 @@ class Circle(
 
     companion object {
         fun randomCircle() : Circle {
-            val radius = Random.nextDouble(1.0, 10.0)
+            val radius = Random.nextDouble(1.0, 20.0)
             return Circle(radius)
         }
     }
