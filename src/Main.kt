@@ -12,8 +12,12 @@ fun main() {
 //    organizeList()
 //    println(line)
 
-    lambdaGetSum()
+    var customTriple = CustomTriple<Int, String, Boolean>(3, "hello", true)
+    customTriple.printTypes()
     println(line)
+
+//    lambdaGetSum()
+//    println(line)
 
 //    shapes()
 //    println(line)
@@ -182,11 +186,11 @@ fun shapes() : Unit {
     }
 }
 
-fun List<Shape>.customFilter(filterFunction: (Shape) -> (Boolean)): List<Shape>{
-    val resultList = mutableListOf<Shape>()
-    for (shape in this){
-        if (filterFunction(shape)){
-            resultList.add(shape)
+fun <T> List<T>.customFilter(filterFunction: (T) -> (Boolean)): List<T>{
+    val resultList = mutableListOf<T>()
+    for (item in this){
+        if (filterFunction(item)){
+            resultList.add(item)
         }
     }
 
